@@ -1,4 +1,7 @@
-﻿using BenchmarkDotNet.Running;
+﻿using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Jobs;
+using BenchmarkDotNet.Running;
+using BenchmarkDotNet.Toolchains.InProcess.NoEmit;
 using Benchmarks;
 
 namespace Bench;
@@ -7,6 +10,12 @@ public class Program
 {
 	public static void Main()
 	{
-		var sum = BenchmarkRunner.Run<SortingBenchmarks>();
+		var config = DefaultConfig.Instance
+									.AddJob(Job
+									.MediumRun
+									.WithLaunchCount(1)
+									.WithToolchain(InProcessNoEmitToolchain.Instance));
+
+		var sum = BenchmarkRunner.Run<SortingBenchmarks>(config);
 	}
 }
