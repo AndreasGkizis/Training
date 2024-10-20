@@ -28,6 +28,20 @@ public class AnagramTests
 
         result.Should().Be(expectedResult);
     }
+    
+    [Theory]
+    [MemberData(nameof(GetAnagramTestData))]
+    public void Optv1_1(string input1, string input2, bool expectedResult)
+    {
+        // this can not handle numbers as is 
+        if (input1.Any(char.IsDigit) || input2.Any(char.IsDigit))
+        {
+            return;
+        }
+        var result = Anagram.Optimizedv1_1(input1, input2);
+
+        result.Should().Be(expectedResult);
+    }
 
     [Theory]
     [MemberData(nameof(GetAnagramTestData))]

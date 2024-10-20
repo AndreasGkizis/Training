@@ -1,17 +1,15 @@
-﻿using System.Reflection.Metadata.Ecma335;
+﻿namespace StringProblems;
 
-namespace StringProblems;
-
-// Q :  find oput if a string is a plandrome
+// Q : find oput if a string is a plandrome
 public static class Palindrome
 {
 	public static bool Base(string input)
 	{
 		if (input.Length == 0) return false;
 
-		var reversedChars = input.ToCharArray().Reverse().ToArray();
-
-		var reversedString = new String(reversedChars);
+		var charArray = input.ToCharArray();
+		Array.Reverse(charArray);
+		var reversedString = new string(charArray);
 
 		if (reversedString.Equals(input, StringComparison.OrdinalIgnoreCase))
 		{
@@ -41,6 +39,7 @@ public static class Palindrome
 		if (input.Length == 0) return false;
 
 		input = input.ToLower();
+
 
 		var halflength = input.Length / 2;
 

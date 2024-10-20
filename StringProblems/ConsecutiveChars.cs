@@ -1,15 +1,14 @@
 ﻿namespace StringProblems;
 public static class ConsecutiveChars
-{
+{ // Q: find the maximum  consecutive repeating in given string
 	public static char Base(string input)
-	{ // Q: find the maximum  consecutive repeating in given string
+	{
 		if (input.Length == 0)
 		{
 			return ' ';
 		}
 		else if (input.Length == 1)
 		{
-
 			return input[0];
 		}
 

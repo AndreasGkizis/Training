@@ -12,10 +12,10 @@ public class Program
 	{
 		var config = DefaultConfig.Instance
 									.AddJob(Job
-									.MediumRun
+									.ShortRun
 									.WithLaunchCount(1)
 									.WithToolchain(InProcessNoEmitToolchain.Instance));
 
-		var sum = BenchmarkRunner.Run<SortingBenchmarks>(config);
+		var sum = BenchmarkRunner.Run<PalindromeBenchmarks>(config);
 	}
 }

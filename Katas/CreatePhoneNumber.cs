@@ -19,7 +19,6 @@ public class CreatePhoneNumber
 			if (0 == i)
 			{
 				result = $"({numbers[i]}";
-
 			}
 			else if (i == 2)
 			{

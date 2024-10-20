@@ -1,6 +1,6 @@
 ﻿namespace StringProblems;
 public static class MostUsedChars
-{   // Q : find the most repeated chars in a string
+{	// Q : find the most repeated chars in a string
 
 	public static string Base(string input)
 	{
@@ -16,9 +16,6 @@ public static class MostUsedChars
 		{
 			int position = input[i] - 'a';
 			memory[position]++;
-			// see if the next char is the same , increment if true
-			// save somewhere 
-			// print the biggest one 
 		}
 		int max = memory.Max();
 		string result= string.Empty;
@@ -30,7 +27,6 @@ public static class MostUsedChars
 				result += new string((char)('a' + i), max);
 			}
 		}
-
 		return result;
 	}
 }

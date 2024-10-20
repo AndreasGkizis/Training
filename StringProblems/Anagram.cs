@@ -5,7 +5,7 @@ public static class Anagram
 	//Q: check if 2 strings are an anagram of each other
 	public static bool Base(string input1, string input2)
 	{
-		input1 = input1.ToLower().Replace(" ", null);
+		input1 = input1.ToLower().Replace(" ", null);  // replace to ignore spaces , is this a definition violation of an anagram?
 		input2 = input2.ToLower().Replace(" ", null);
 		var charArray1 = input1.ToCharArray();
 		var charArray2 = input2.ToCharArray();
@@ -45,6 +45,41 @@ public static class Anagram
 		}
 
 		return input1Array.SequenceEqual(input2Array);
+	}
+	
+	// only for non number strings
+	public static bool Optimizedv1_1(string input1, string input2)
+	{
+		input1 = input1.Replace(" ", null);
+		input2 = input2.Replace(" ", null);
+
+		if (input1.Length != input2.Length) return false;
+
+		//create array for the count of chars
+		// 26 lowercase 26 uppercase  = 52
+		var input1Array = new int[52];
+		var input2Array = new int[52];
+		PopulateArrayWithChars(input1, input1Array);
+		PopulateArrayWithChars(input2, input2Array);
+
+		return input1Array.SequenceEqual(input2Array);
+	}
+
+	private static void PopulateArrayWithChars(string inputString, int[] array)
+	{
+		foreach (var character in inputString)
+		{
+			if (char.IsLower(character))
+			{
+				var indexOfChar = (byte)character - (byte)'a';
+				array[indexOfChar]++;
+			}
+			else if (char.IsUpper(character))
+			{
+				var indexOfChar = (byte)character - (byte)'A' + 26; // to start after the lowercase ones
+				array[indexOfChar]++;
+			}
+		}
 	}
 
 	// for all chars
