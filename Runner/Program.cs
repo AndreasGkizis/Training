@@ -2,7 +2,6 @@
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Toolchains.InProcess.NoEmit;
-using Benchmarks;
 
 namespace Bench;
 
