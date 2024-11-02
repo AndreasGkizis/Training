@@ -11,7 +11,7 @@ public class ApiTests(DatabaseFixture db) : IClassFixture<DatabaseFixture>
     {
         var repo = db.ServiceProvider.GetRequiredService<ICarsRepo>();
 
-        var result = repo.GetAllCars();
+        var result = await repo.GetAllCars();
 
         result.Should().NotBeNull();
         result.Should().NotBeEmpty();

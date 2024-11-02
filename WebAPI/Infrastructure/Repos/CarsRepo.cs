@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using WebAPI.Domain;
 using WebAPI.Infrastructure.Repos.Interfaces;
 using WebAPI.Persistence;
@@ -13,9 +14,9 @@ public class CarsRepo: ICarsRepo
         _context = context;
     }
 
-    public List<Car> GetAllCars()
+    public async Task<List<Car>> GetAllCars(CancellationToken token = default)
     {
-        return _context.Cars.ToList(); 
+        return await _context.Cars.ToListAsync(token); 
     }
 
     public void AddCar()

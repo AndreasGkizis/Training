@@ -10,8 +10,8 @@ namespace Tests.Integration;
 
 public class DatabaseFixture : IAsyncLifetime
 {
-    public IServiceProvider ServiceProvider;
-    private MsSqlContainer _container;
+    public readonly IServiceProvider ServiceProvider;
+    private readonly MsSqlContainer _container;
 
     public DatabaseFixture()
     {

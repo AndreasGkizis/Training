@@ -4,6 +4,6 @@ namespace WebAPI.Infrastructure.Repos.Interfaces;
 
 public interface ICarsRepo
 {
-    public List<Car> GetAllCars();
+    public Task<List<Car>> GetAllCars(CancellationToken token =default);
     public void AddCar();
 }
