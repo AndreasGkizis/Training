@@ -18,7 +18,7 @@ public static class Anagram
 	}
 
 	// only for non number strings
-	public static bool Optimizedv1(string input1, string input2)
+	public static bool OptimizedV1(string input1, string input2)
 	{
 		input1 = input1.Replace(" ", null);
 		input2 = input2.Replace(" ", null);

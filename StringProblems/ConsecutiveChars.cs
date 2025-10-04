@@ -1,11 +1,11 @@
 ﻿namespace StringProblems;
 public static class ConsecutiveChars
-{ // Q: find the maximum  consecutive repeating in given string
-	public static char Base(string input)
+{ // Q: find the maximum consecutive repeating in given string
+	public static char? Base(string input)
 	{
 		if (input.Length == 0)
 		{
-			return ' ';
+			return null;
 		}
 		else if (input.Length == 1)
 		{
@@ -15,24 +15,24 @@ public static class ConsecutiveChars
 		//get the first 
 		var result = input[0];
 		int count = 0;
-		int cur_count = 1;
+		int curCount = 1;
 
 		for (int i = 0; i < input.Length; i++)
 		{
 			//same as the next
 			if ((i + 1) < input.Length && input[i + 1] == input[i])
 			{
-				cur_count++;
+				curCount++;
 			}
 			else
 			{
 				//crown new king
-				if (cur_count > count)
+				if (curCount > count)
 				{
-					count = cur_count;
+					count = curCount;
 					result = input[i];
 				}
-				cur_count = 1;
+				curCount = 1;
 			}
 		}
 		return result;

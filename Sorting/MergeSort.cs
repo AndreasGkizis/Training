@@ -34,11 +34,11 @@ public static class MergeSort
 		leftArray = Sort(leftArray); // get sorted array
 		rightArray = Sort(rightArray); // get sorted array
 
-		result = merge(leftArray, rightArray);
+		result = Merge(leftArray, rightArray);
 		return result;
 	}
 
-	private static int[] merge(int[] leftArray, int[] rightArray)
+	private static int[] Merge(int[] leftArray, int[] rightArray)
 	{
 		int resultLength = leftArray.Length + rightArray.Length;
 		int[] result = new int[resultLength];
@@ -117,11 +117,11 @@ public static class GenMergeSort<T> where T : IComparable
 		leftArray = Sort(leftArray); // get sorted array
 		rightArray = Sort(rightArray); // get sorted array
 
-		result = merge(leftArray, rightArray);
+		result = Merge(leftArray, rightArray);
 		return result;
 	}
 
-	private static T[] merge(T[] leftArray, T[] rightArray)
+	private static T[] Merge(T[] leftArray, T[] rightArray)
 	{
 		int resultLength = leftArray.Length + rightArray.Length;
 		T[] result = new T[resultLength];

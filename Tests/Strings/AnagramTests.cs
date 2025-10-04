@@ -25,7 +25,7 @@ public class AnagramTests
         {
             return;
         }
-        var result = Anagram.Optimizedv1(input1, input2);
+        var result = Anagram.OptimizedV1(input1, input2);
 
         result.Should().Be(expectedResult);
     }

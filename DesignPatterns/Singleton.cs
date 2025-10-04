@@ -11,7 +11,7 @@ public sealed class Singleton
 	private Singleton() { }
 	public static Singleton GetInstance()
 	{
-		if (_instance == null)
+		if (_instance is null)
 		{
 			_instance = new Singleton();
 		}

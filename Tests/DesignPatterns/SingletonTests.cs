@@ -32,7 +32,7 @@ public class ThreadSafeSingletonTests
 		Assert.Equal("First", instance2.Name); 
 	}
 
-	// this runs first, so now the name of the signleton is "First" if other tests attempt to create a new one they will not be able to 
+	// this runs first, so now the name of the singleton is "First" if other tests attempt to create a new one they will not be able to 
 	[Fact]
 	public void GetInstance_ShouldBeThreadSafe()
 	{

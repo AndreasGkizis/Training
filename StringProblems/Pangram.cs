@@ -13,14 +13,14 @@ public static class Pangram
         var result = true;
         char[] charArray = input.ToLower().Replace(" ", null).ToCharArray();
         int[] memory = new int[26];
-        foreach (char kati in charArray)
+        foreach (char c in charArray)
         {
-            if (char.IsDigit(kati) || char.IsPunctuation(kati) || char.IsSeparator(kati))
+            if (char.IsDigit(c) || char.IsPunctuation(c) || char.IsSeparator(c))
             {
                 continue;
             }
 
-            int index = (byte)kati - (byte)'a';
+            int index = (byte)c - (byte)'a';
             memory[index]++;
         }
 

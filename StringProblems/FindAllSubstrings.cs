@@ -1,7 +1,7 @@
 ﻿namespace StringProblems;
 public static class FindAllSubstrings
 {
-	//Q: find all occurances of a substring in a string 
+	//Q: find all occurrences of a substring in a string 
 	public static List<int> Base(string baseString, string subString)
 	{
 		List<int> result = new();

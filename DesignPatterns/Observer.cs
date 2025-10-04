@@ -14,7 +14,7 @@ public class ObserverPattern
 		public void ChangeState(string newState);
 		public string GetCurrentState();
 		public void AddSubscription(IObserver sub);
-		public void removeSubscription(IObserver sub);
+		public void RemoveSubscription(IObserver sub);
 		public void Notify();
 	}
 	#endregion
@@ -23,20 +23,20 @@ public class ObserverPattern
 	public class YoutubeChannel : ISubject
 	{
 		private string _state { get; set; } = string.Empty;
-		private List<IObserver> _subscribers { get; set; } = new List<IObserver>();
+		private List<IObserver> Subscribers { get; set; } = [];
 		public void AddSubscription(IObserver sub)
 		{
-			_subscribers.Add(sub);
+			Subscribers.Add(sub);
 		}
 
-		public void removeSubscription(IObserver sub)
+		public void RemoveSubscription(IObserver sub)
 		{
-			_subscribers.Remove(sub);
+			Subscribers.Remove(sub);
 		}
 
 		public void Notify()
 		{
-			foreach (var sub in _subscribers)
+			foreach (var sub in Subscribers)
 			{
 				sub.Update(this);
 			}

@@ -27,21 +27,27 @@ public class AnagramBenckmarks
 			.Select(s => s[random.Next(s.Length)]).ToArray());
 	}
 
-	//[Benchmark(Baseline = true)]
-	//public void Base()
-	//{
-	//	Anagram.Base(_testString1, _testString2);
-	//}
-
 	[Benchmark(Baseline = true)]
-	public void opti1()
+	public void Base()
 	{
-		Anagram.Optimizedv1(_testString1, _testString2);
+		Anagram.Base(_testString1, _testString2);
 	}
 
 	[Benchmark]
-	public void opti1_1()
+	public void Option1()
+	{
+		Anagram.OptimizedV1(_testString1, _testString2);
+	}
+
+	[Benchmark]
+	public void Option1_1()
 	{
 		Anagram.Optimizedv1_1(_testString1, _testString2);
+	}
+	
+	[Benchmark]
+	public void Option2()
+	{
+		Anagram.Optimizedv2(_testString1, _testString2);
 	}
 }

@@ -1,71 +1,79 @@
 ﻿namespace StringProblems;
 
-// Q : find oput if a string is a plandrome
+// Q : find out if a string is a palindrome
 public static class Palindrome
 {
-	public static bool Base(string input)
-	{
-		if (input.Length == 0) return false;
+    public static bool Base(string input)
+    {
+        if (input.Length == 0) return false;
 
-		var charArray = input.ToCharArray();
-		Array.Reverse(charArray);
-		var reversedString = new string(charArray);
+        var charArray = input.ToCharArray();
+        Array.Reverse(charArray);
+        var reversedString = new string(charArray);
 
-		if (reversedString.Equals(input, StringComparison.OrdinalIgnoreCase))
-		{
-			return true;
-		}
-		return false;
-	}
+        if (reversedString.Equals(input, StringComparison.OrdinalIgnoreCase))
+        {
+            return true;
+        }
 
-	public static bool Optimized(string input)
-	{
-		if (input.Length == 0) return false;
+        return false;
+    }
 
-		input = input.ToLower();
-		for (int i = 0; i < input.Length; i++)
-		{
-			var letterA = input[i];
-			var letterB = input[input.Length - (i + 1)];
-			if (letterA != letterB) { return false; }
-		}
-		return true;
-	}
+    public static bool Optimized(string input)
+    {
+        if (input.Length == 0) return false;
 
-	// winner! Does to lower once, allocate 0 bytes
-	// O(n)
-	public static bool Optimizedv2(string input)
-	{
-		if (input.Length == 0) return false;
+        input = input.ToLower();
+        for (int i = 0; i < input.Length; i++)
+        {
+            var letterA = input[i];
+            var letterB = input[input.Length - (i + 1)];
+            if (letterA != letterB)
+                return false;
+        }
 
-		input = input.ToLower();
+        return true;
+    }
 
+    // winner! Does to lower once, allocate 0 bytes
+    // O(n)
+    public static bool Optimizedv2(string input)
+    {
+        if (input.Length == 0) return false;
 
-		var halflength = input.Length / 2;
+        input = input.ToLower();
 
-		for (int i = 0; i < halflength; i++)
-		{
-			var letterA = input[i];
-			var letterB = input[input.Length - (i + 1)];
-			if (letterA != letterB) { return false; }
-		}
+        var halflength = input.Length / 2;
 
-		return true;
-	}
+        for (int i = 0; i < halflength; i++)
+        {
+            var letterA = input[i];
+            var letterB = input[input.Length - (i + 1)];
+            if (letterA != letterB)
+            {
+                return false;
+            }
+        }
 
-	public static bool Optimizedv3(string input)
-	{
-		if (input.Length == 0) return false;
+        return true;
+    }
 
-		var halflength = input.Length / 2;
+    public static bool Optimizedv3(string input)
+    {
+        if (input.Length == 0) return false;
 
-		for (int i = 0; i < halflength; i++)
-		{
-			var letterA = char.ToLower(input[i]);
-			var letterB = char.ToLower(input[input.Length - (i + 1)]);
-			if (letterA != letterB) { return false; }
-		}
+        var halflength = input.Length / 2;
 
-		return true;
-	}
+        for (int i = 0; i < halflength; i++)
+        {
+            var letterA = char.ToLower(input[i]);
+            var letterB = char.ToLower(input[input.Length - (i + 1)]);
+            if (letterA != letterB)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

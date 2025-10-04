@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace Tests;
+namespace Tests.Sorting;
 public class Data : IEnumerable<object[]>
 {
 	public IEnumerator<object[]> GetEnumerator()

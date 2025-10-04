@@ -31,7 +31,7 @@ public class ReverseStringsBenchMarks
 	}
 
 	[Benchmark]
-	public string LINQReverse()
+	public string LinqReverse()
 	{
 		return new string(_testString.ToCharArray().Reverse().ToArray());
 	}

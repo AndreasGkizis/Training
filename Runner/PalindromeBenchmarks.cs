@@ -1,7 +1,7 @@
 ﻿using BenchmarkDotNet.Attributes;
 using StringProblems;
 
-namespace Bench;
+namespace Benchmarks;
 
 [MemoryDiagnoser]
 [ThreadingDiagnoser]

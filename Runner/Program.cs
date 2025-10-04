@@ -3,7 +3,7 @@ using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Toolchains.InProcess.NoEmit;
 
-namespace Bench;
+namespace Benchmarks;
 
 public class Program
 {
@@ -15,6 +15,6 @@ public class Program
 									.WithLaunchCount(1)
 									.WithToolchain(InProcessNoEmitToolchain.Instance));
 
-		var sum = BenchmarkRunner.Run<PalindromeBenchmarks>(config);
+		var sum = BenchmarkRunner.Run<AnagramBenckmarks>(config);
 	}
 }

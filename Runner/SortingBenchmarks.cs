@@ -9,7 +9,7 @@ public class SortingBenchmarks
 {
 	[Params(10, 50, 100)]
 	public int ArraySize;
-	private readonly Consumer consumer = new();
+	private readonly Consumer _consumer = new();
 
 	private int[] _data;
 
@@ -23,7 +23,7 @@ public class SortingBenchmarks
 	}
 
 	[Benchmark]
-	public void LinQ() => _data.Order().Consume(consumer);
+	public void LinQ() => _data.Order().Consume(_consumer);
 
 	[Benchmark]
 	public void Quick() => QuickSort<int>.Sort(_data, 0, _data.Length - 1);
