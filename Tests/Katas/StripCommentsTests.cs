@@ -11,7 +11,7 @@ public class StripCommentsTests
     public void StripComments_ExampleCases(string input,string expectedResult,string[] commentSymbols )
     {
         var uut = new StripComments();
-        var result = uut.Solve1(input, commentSymbols);
+        var result = uut.Solve(input, commentSymbols);
 
         result.Should().Be(expectedResult);
     }
@@ -19,10 +19,18 @@ public class StripCommentsTests
     public static readonly TheoryData<string, string, string[]> Data = new()
     {
         // AddRow is implicit when using the collection initializer syntax
-        { @"apples, pears # and bananas\ngrapes\nbananas !apples", @"apples, pears\ngrapes\nbananas", ["#", "!"] },
+        { @"apples, pears # and bananas
+grapes
+bananas !apples", @"apples, pears 
+grapes
+bananas ", ["#", "!"] },
 
         // Add a second case for demonstration
-        { "a\n b # c\nd", "a\n b \nd", ["#",] },
+        { @"a
+ b # c
+d", @"a
+ b 
+d", ["#"] },
 
         // Add a case with only one comment marker
         { "hello world # comment", "hello world ", ["#",] }
