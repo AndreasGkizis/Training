@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AsyncExamples\AsyncExamples.csproj" />
+      <ProjectReference Include="..\DesignPatterns\DesignPatterns.csproj" />
+      <ProjectReference Include="..\Katas\Katas.csproj" />
+      <ProjectReference Include="..\ObjectPool\ObjectPool.csproj" />
+      <ProjectReference Include="..\Sorting\Sorting.csproj" />
+      <ProjectReference Include="..\StringProblems\StringProblems.csproj" />
+    </ItemGroup>
+
+</Project>
